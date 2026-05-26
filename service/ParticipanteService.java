@@ -42,13 +42,6 @@ public class ParticipanteService {
         novaInscricao.setParticipante(participante);
         novaInscricao.setEvento(evento);
 
-        // Como o certificado é garantido ao escanear o QR Code, gerei os dados básicos dele aqui.
-        Certificado certificadoAutomatico = new Certificado();
-        certificadoAutomatico.setTitulo("Certificado: " + evento.getNome());
-        certificadoAutomatico.setDescricao("Certificado gerado automaticamente pela participação.");
-        certificadoAutomatico.setTipo("Automático");
-        novaInscricao.setCertificado(certificadoAutomatico);
-
         // Pega quantos pontos o evento vale e soma na coluna do aluno.
         int pontosDoEvento = (evento.getPontos() != null) ? evento.getPontos() : 0;
         participante.setPontos(participante.getPontos() + pontosDoEvento); 
