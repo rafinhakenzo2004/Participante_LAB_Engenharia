@@ -51,7 +51,7 @@ public class ParticipanteService {
 
         // Pega quantos pontos o evento vale e soma na coluna do aluno.
         int pontosDoEvento = (evento.getPontos() != null) ? evento.getPontos() : 0;
-        participante.setPontos(participante.getPontos() + pontosDoEvento); // Altere para setPontos se necessário
+        participante.setPontos(participante.getPontos() + pontosDoEvento); 
 
         participanteRepository.save(participante);
         eventoParticipanteRepository.save(novaInscricao);
