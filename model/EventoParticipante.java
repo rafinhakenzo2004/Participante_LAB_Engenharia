@@ -28,7 +28,6 @@ public class EventoParticipante {
     @JoinColumn(name = "Eventoid", nullable = false)
     private Evento evento;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Certificadoid")
+    @OneToOne(mappedBy = "eventoParticipante", cascade = CascadeType.ALL, orphanRemoval = true)
     private Certificado certificado;
 }
